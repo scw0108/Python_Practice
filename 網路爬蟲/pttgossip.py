@@ -1,8 +1,8 @@
-#抓取ptt電影版的網頁原始碼
+#抓取ptt gossip的網頁原始碼
 import urllib.request as req
 
 def getData(url):
-	#建立一個request物件，附加request headers的資訊
+	#建立一個request物件，附加request headers的資訊包含cookie
 	request=req.Request(url, headers={ 
 		"cookie":"over18=1",
 		"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"})
