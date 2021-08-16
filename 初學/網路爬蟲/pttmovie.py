@@ -1,12 +1,12 @@
 #抓取ptt電影版的網頁原始碼
 import urllib.request as req
-url="https://www.ptt.cc/bbs/movie/index9507.html"
+url="https://www.ptt.cc/bbs/movie/index.html"
 #建立一個request物件，附加request headers的資訊
 request=req.Request(url, headers={ "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"})
 
 with req.urlopen(request) as response:
 	data=response.read().decode("utf-8")
-#print(data)
+print(data)
 
 #解析原始碼，取得每篇文章標題
 import bs4
