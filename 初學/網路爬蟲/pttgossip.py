@@ -19,7 +19,7 @@ def getData(url):
 	for title in titles:
 		if title.a!=None: #如果標題有包含a標籤
 			print(title.a.string)
-			with open ("pttgossip.txt",mode="a",encoding="utf-8") as file:
+			with open ("pttgossip.txt",mode="a+",encoding="utf-8") as file:
 				for data in title.a:
 					file.write(data+"\n")
 	with open ("pttgossip.txt",mode="a",encoding="utf-8") as file:
@@ -27,6 +27,7 @@ def getData(url):
 
 	nextLink=root.find("a",string="‹ 上頁") #抓取多個頁面的連結
 	print("\n")
+	#return nextLink.get("href")
 	return nextLink["href"]
 
 
